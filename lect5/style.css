@@ -1,0 +1,47 @@
+* {
+  color: blue;
+}
+
+#div1,
+#div2,
+#div3,
+#div4 {
+  background-color: lightgray;
+}
+
+.div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+p.dotted {
+  border-style: dotted;
+}
+p.dashed {
+  border-style: dashed;
+}
+p.solid {
+  border-style: solid;
+}
+p.double {
+  border-style: double;
+}
+
+p.none {
+  border-style: none;
+}
+p.hidden {
+  border-style: hidden;
+}
+p.mix {
+  border-style: dotted dashed;
+}
