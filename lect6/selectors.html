@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors - Examples for Students</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #007bff;
+        padding-bottom: 10px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .selector-section {
+        background: white;
+        margin-bottom: 25px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .selector-title {
+        font-size: 1.5em;
+        color: #007bff;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .selector-code {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-left: 4px solid #007bff;
+        margin: 10px 0;
+        font-family: "Courier New", monospace;
+        color: #d63384;
+        overflow-x: auto;
+      }
+
+      .description {
+        color: #555;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      .example-box {
+        background-color: #e7f3ff;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border-left: 4px solid #28a745;
+      }
+
+      /* ===== 1. ELEMENT/TYPE SELECTORS ===== */
+      p {
+        color: #333;
+      }
+
+      .highlighted-p {
+        background-color: #fff3cd;
+        padding: 10px;
+      }
+
+      /* ===== 2. CLASS SELECTORS ===== */
+      .intro {
+        background-color: #cfe2ff;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .warning {
+        background-color: #f8d7da;
+        border: 2px solid #d32f2f;
+        padding: 10px;
+        color: #721c24;
+      }
+
+      .success {
+        background-color: #d4edda;
+        border: 2px solid #28a745;
+        padding: 10px;
+        color: #155724;
+      }
+
+      /* ===== 3. ID SELECTORS ===== */
+      #main-header {
+        background-color: #343a40;
+        color: white;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+
+      #featured {
+        background-color: #fff59d;
+        padding: 15px;
+        margin: 10px 0;
+        border: 2px solid #f57f17;
+      }
+
+      /* ===== 4. UNIVERSAL SELECTOR ===== */
+      /* Already applied above */
+
+      /* ===== 5. ATTRIBUTE SELECTORS ===== */
+      input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin: 5px 0;
+      }
+
+      input[type="email"] {
+        padding: 8px;
+        border: 2px solid #007bff;
+        border-radius: 4px;
+        margin: 5px 0;
+      }
+
+      a[href*="google"] {
+        color: #1f6feb;
+        font-weight: bold;
+      }
+
+      a[href^="https"] {
+        text-decoration: underline;
+      }
+
+      /* ===== 6. PSEUDO-CLASS SELECTORS ===== */
+      a:hover {
+        color: #ff6b6b;
+        text-decoration: underline;
+      }
+
+      li:first-child {
+        font-weight: bold;
+        color: #28a745;
+      }
+
+      li:last-child {
+        font-style: italic;
+        color: #6c757d;
+      }
+
+      li:nth-child(2) {
+        background-color: #fff3cd;
+        padding: 5px;
+      }
+
+      input:focus {
+        outline: 2px solid #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      /* ===== 7. PSEUDO-ELEMENT SELECTORS ===== */
+      .quote::before {
+        content: "💡 ";
+        color: #ffc107;
+      }
+
+      .quote::after {
+        content: " - Important!";
+        color: #d32f2f;
+      }
+
+      .intro-text::first-letter {
+        font-size: 2em;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .intro-text::first-line {
+        font-weight: bold;
+      }
+
+      /* ===== 8. COMBINATOR SELECTORS ===== */
+      .parent > .child {
+        margin-left: 20px;
+        padding: 10px;
+        background-color: #e9ecef;
+      }
+
+      .ancestor .descendant {
+        color: #6f42c1;
+      }
+
+      .sibling + .next-sibling {
+        background-color: #d1ecf1;
+        padding: 5px;
+      }
+
+      .sibling ~ .all-siblings {
+        border-top: 1px solid #dee2e6;
+        padding-top: 10px;
+      }
+
+      /* ===== 9. GROUPING SELECTORS ===== */
+      .section,
+      .article,
+      .post {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+      }
+
+      /* ===== 10. MULTIPLE SELECTORS ===== */
+      h2,
+      h3 {
+        color: #007bff;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Selectors - Complete Guide with Examples</h1>
+
+      <!-- 1. ELEMENT/TYPE SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">1. Element/Type Selectors</div>
+        <div class="description">Select elements by their HTML tag name</div>
+        <div class="selector-code">p { color: #333; }</div>
+        <div class="example-box">
+          <p>
+            This is a paragraph selected by element selector. All &lt;p&gt; tags
+            will have this color.
+          </p>
+          <p>
+            This is another paragraph. The selector applies to all p elements on
+            the page.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. CLASS SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">2. Class Selectors</div>
+        <div class="description">
+          Select elements by their class attribute (prefixed with .)
+        </div>
+        <div class="selector-code">.intro { background-color: #cfe2ff; }</div>
+        <div class="example-box">
+          <div class="intro">
+            This div has the 'intro' class - it's highlighted with a blue
+            background.
+          </div>
+          <div class="warning">
+            This div has the 'warning' class - it's styled differently.
+          </div>
+          <div class="success">
+            This div has the 'success' class - it shows success styling.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ID SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">3. ID Selectors</div>
+        <div class="description">
+          Select a specific element by its ID attribute (prefixed with #). IDs
+          should be unique!
+        </div>
+        <div class="selector-code">
+          #main-header { background-color: #343a40; }
+        </div>
+        <div class="example-box">
+          <div id="main-header">
+            This div has ID 'main-header'. IDs are unique and target ONE
+            element.
+          </div>
+          <div id="featured">
+            This div has ID 'featured'. Use IDs for unique page elements.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. UNIVERSAL SELECTOR -->
+      <div class="selector-section">
+        <div class="selector-title">4. Universal Selector</div>
+        <div class="description">Select ALL elements on the page (using *)</div>
+        <div class="selector-code">
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+        </div>
+        <div class="example-box">
+          <p>
+            The universal selector targets every element. It's commonly used to
+            reset default styles.
+          </p>
+          <p>
+            Every element on this page has been affected by the universal
+            selector rules.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. ATTRIBUTE SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">5. Attribute Selectors</div>
+        <div class="description">Select elements based on their attributes</div>
+
+        <h3>a) [attribute] - Has attribute</h3>
+        <div class="selector-code">
+          input[type="text"] { padding: 8px; border: 1px solid #ddd; }
+        </div>
+        <div class="example-box">
+          <label>Text Input (has type="text"):</label><br />
+          <input
+            type="text"
+            placeholder="This is styled by [type='text'] selector"
+          />
+          <br /><br />
+          <label>Email Input (has type="email"):</label><br />
+          <input
+            type="email"
+            placeholder="This is styled by [type='email'] selector"
+          />
+        </div>
+
+        <h3>b) [attribute*="value"] - Contains</h3>
+        <div class="selector-code">
+          a[href*="google"] { color: #1f6feb; font-weight: bold; }
+        </div>
+        <div class="example-box">
+          <a href="https://www.google.com">Link containing 'google' in URL</a>
+          <br />
+          <a href="https://www.example.com">Regular link (not styled)</a>
+        </div>
+
+        <h3>c) [attribute^="value"] - Starts with</h3>
+        <div class="selector-code">
+          a[href^="https"] { text-decoration: underline; }
+        </div>
+        <div class="example-box">
+          <a href="https://www.secure.com"
+            >Link starting with https (underlined)</a
+          >
+          <br />
+          <a href="http://www.example.com">Link with http (not underlined)</a>
+        </div>
+      </div>
+
+      <!-- 6. PSEUDO-CLASS SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">6. Pseudo-Class Selectors</div>
+        <div class="description">
+          Select elements in a specific state or position
+        </div>
+
+        <h3>a) :hover - When mouse is over element</h3>
+        <div class="selector-code">
+          a:hover { color: #ff6b6b; text-decoration: underline; }
+        </div>
+        <div class="example-box">
+          <p><a href="#">Hover over this link</a> to see the :hover effect</p>
+        </div>
+
+        <h3>b) :first-child - First child element</h3>
+        <div class="selector-code">
+          li:first-child { font-weight: bold; color: #28a745; }
+        </div>
+        <div class="example-box">
+          <ul>
+            <li>First item (styled with :first-child)</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+        </div>
+
+        <h3>c) :last-child - Last child element</h3>
+        <div class="selector-code">
+          li:last-child { font-style: italic; color: #6c757d; }
+        </div>
+        <div class="example-box">
+          <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item (styled with :last-child)</li>
+          </ul>
+        </div>
+
+        <h3>d) :nth-child(n) - Specific child position</h3>
+        <div class="selector-code">
+          li:nth-child(2) { background-color: #fff3cd; }
+        </div>
+        <div class="example-box">
+          <ul>
+            <li>First item</li>
+            <li>Second item (styled with :nth-child(2))</li>
+            <li>Third item</li>
+          </ul>
+        </div>
+
+        <h3>e) :focus - Element has focus</h3>
+        <div class="selector-code">
+          input:focus { outline: 2px solid #007bff; }
+        </div>
+        <div class="example-box">
+          <label>Click here and see the :focus effect:</label><br />
+          <input type="text" placeholder="Click to focus" />
+        </div>
+      </div>
+
+      <!-- 7. PSEUDO-ELEMENT SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">7. Pseudo-Element Selectors</div>
+        <div class="description">Style specific parts of an element</div>
+
+        <h3>a) ::before - Add content before element</h3>
+        <div class="selector-code">.quote::before { content: "💡 "; }</div>
+        <div class="example-box">
+          <p class="quote">
+            This is a quote. The bulb emoji is added with ::before
+          </p>
+        </div>
+
+        <h3>b) ::after - Add content after element</h3>
+        <div class="selector-code">
+          .quote::after { content: " - Important!"; }
+        </div>
+        <div class="example-box">
+          <p class="quote">Another quote with added text</p>
+        </div>
+
+        <h3>c) ::first-letter - Style first letter</h3>
+        <div class="selector-code">
+          .intro-text::first-letter { font-size: 2em; font-weight: bold; }
+        </div>
+        <div class="example-box">
+          <p class="intro-text">
+            This paragraph has a large first letter styled with ::first-letter
+          </p>
+        </div>
+
+        <h3>d) ::first-line - Style first line</h3>
+        <div class="selector-code">
+          .intro-text::first-line { font-weight: bold; }
+        </div>
+        <div class="example-box">
+          <p class="intro-text">
+            This is the first line which will be bold. This is the second line
+            which won't be bold. The ::first-line selector only styles the first
+            line.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8. COMBINATOR SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">8. Combinator Selectors</div>
+        <div class="description">
+          Select elements based on their relationship to other elements
+        </div>
+
+        <h3>a) Child Combinator (>)</h3>
+        <div class="selector-code">.parent > .child { margin-left: 20px; }</div>
+        <div class="example-box">
+          <div class="parent">
+            Parent element
+            <div class="child">Direct child (styled with >)</div>
+          </div>
+        </div>
+
+        <h3>b) Descendant Combinator (space)</h3>
+        <div class="selector-code">
+          .ancestor .descendant { color: #6f42c1; }
+        </div>
+        <div class="example-box">
+          <div class="ancestor">
+            Ancestor element
+            <div>
+              <p class="descendant">
+                Nested descendant (styled - any level deep)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>c) Adjacent Sibling Combinator (+)</h3>
+        <div class="selector-code">
+          .sibling + .next-sibling { background-color: #d1ecf1; }
+        </div>
+        <div class="example-box">
+          <p class="sibling">First sibling paragraph</p>
+          <p class="next-sibling">
+            Second paragraph (directly after first - styled with +)
+          </p>
+          <p>Third paragraph (not styled)</p>
+        </div>
+
+        <h3>d) General Sibling Combinator (~)</h3>
+        <div class="selector-code">
+          .sibling ~ .all-siblings { border-top: 1px solid #dee2e6; }
+        </div>
+        <div class="example-box">
+          <p class="sibling">First sibling paragraph</p>
+          <p class="all-siblings">Second paragraph (styled with ~)</p>
+          <p class="all-siblings">Third paragraph (also styled with ~)</p>
+        </div>
+      </div>
+
+      <!-- 9. GROUPING SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">9. Grouping Selectors</div>
+        <div class="description">
+          Apply same styles to multiple selectors (separated by commas)
+        </div>
+        <div class="selector-code">
+          .section, .article, .post { border: 1px solid #ddd; }
+        </div>
+        <div class="example-box">
+          <div class="section">This is a section (styled)</div>
+          <div class="article">This is an article (styled)</div>
+          <div class="post">This is a post (styled)</div>
+        </div>
+      </div>
+
+      <!-- 10. MULTIPLE SELECTORS -->
+      <div class="selector-section">
+        <div class="selector-title">10. Multiple Selectors (Grouping)</div>
+        <div class="description">
+          Apply the same style to multiple heading levels
+        </div>
+        <div class="selector-code">
+          h2, h3 { color: #007bff; margin-top: 20px; }
+        </div>
+        <div class="example-box">
+          <h2>Heading 2 - Styled with multiple selector</h2>
+          <h3>Heading 3 - Also styled with multiple selector</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
