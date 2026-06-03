@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        background: lightblue;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1;
+      }
+      @media (max-width: 480px) {
+        .container {
+          flex-direction: column;
+        }
+        .card {
+          width: 100%;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .card {
+          width: calc(50% - 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="https://picsum.photos/300" alt="Image" />
+        <h2>Card Title</h2>
+        <p>Card description goes here.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/301" alt="Image" />
+        <h2>Card Title</h2>
+        <p>Card description goes here.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/302" alt="Image" />
+        <h2>Card Title</h2>
+        <p>Card description goes here.</p>
+      </div>
+    </div>
+  </body>
+</html>

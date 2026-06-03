@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Grid</title>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "sidebar main main"
+          "footer footer footer";
+        text-align: center;
+        justify-items: center;
+      }
+      .grid-item {
+        background-color: lightblue;
+        border: 1px solid black;
+        width: auto;
+        height: 100px;
+      }
+      .grid1 {
+        grid-area: header;
+      }
+      .grid2 {
+        grid-area: sidebar;
+      }
+      .grid3 {
+        grid-area: main;
+      }
+      .grid4 {
+        grid-area: main;
+      }
+      .grid5 {
+        grid-area: main;
+      }
+      .grid6 {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid-item grid1">Header</div>
+      <div class="grid-item grid2">Sidebar</div>
+      <div class="grid-item grid3">Main</div>
+      <div class="grid-item grid4">Main</div>
+      <div class="grid-item grid5">Main</div>
+      <div class="grid-item grid6">Footer</div>
+    </div>
+  </body>
+</html>

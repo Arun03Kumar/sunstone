@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          /* align-items: flex-start; */
+        }
+        .menu {
+          flex-direction: column;
+          /* width: 100%; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">MyLogo</div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
