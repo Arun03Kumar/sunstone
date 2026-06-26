@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .light {
+        background-color: blue;
+        color: yellow;
+      }
+
+      .dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>theme demo</h1>
+    <button data-theme="dark">Dark</button>
+    <button data-theme="light">Light</button>
+
+    <script>
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const theme = btn.dataset.theme;
+          console.log(theme);
+          document.body.className = theme;
+        });
+      });
+    </script>
+  </body>
+</html>

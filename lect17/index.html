@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Product 1</li>
+      <li id="product2">Product 2</li>
+      <li>Product 3</li>
+    </ul>
+
+    <script>
+      const product2 = document.getElementById("product2");
+      console.log(product2);
+
+      const new_el = document.createElement("li");
+      new_el.textContent = "Product 4";
+
+      const new_el2 = document.createElement("li");
+      new_el2.textContent = "Product 8";
+
+      //   product2.before(new_el);
+      //   product2.after(new_el);
+
+      const ul = document.querySelector("ul");
+      ul.append(new_el, new_el2);
+      //   ul.append(new_el2);
+      //   ul.append(new_el);
+      //   ul.appendChild(new_el);
+      //   ul.appendChild(new_el2);
+      //   ul.appendChild(new_el);
+
+      //   ul.prepend(new_el);
+
+      //   new_el2.remove();
+      const new_el3 = document.createElement("li");
+      new_el3.textContent = "Product 9";
+      new_el2.replaceWith(new_el3);
+    </script>
+  </body>
+</html>

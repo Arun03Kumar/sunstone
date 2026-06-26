@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="register">
+      <input id="name" placeholder="Name" />
+      <div id="nameError"></div>
+      <br />
+      <input id="email" placeholder="Email" />
+      <div id="emailError"></div>
+      <br />
+      <input id="password" type="password" placeholder="Password" />
+      <div id="passwordError"></div>
+      <input
+        id="confirmPassword"
+        type="password"
+        placeholder="Confirm Password"
+      />
+      <div id="confirmPasswordError"></div>
+      <br />
+      <button>register</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("register");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("passwordError").textContent = "";
+        document.getElementById("confirmPasswordError").textContent = "";
+
+        let valid = true;
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (name.trim() === "") {
+          document.getElementById("nameError").textContent = "Name is required";
+          valid = false;
+        }
+
+        const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailReg.test(email)) {
+          document.getElementById("emailError").textContent =
+            "Invalid email format";
+          valid = false;
+        }
+
+        if (password.length < 8) {
+          const passwordError = (document.getElementById(
+            "passwordError",
+          ).textContent = "min 8 chars required");
+          valid = false;
+        }
+
+        if (password !== confirmPassword) {
+          document.getElementById("confirmPasswordError").textContent =
+            "Password do not match";
+
+          valid = false;
+        }
+
+        if (valid) alert("registration successful");
+      });
+    </script>
+  </body>
+</html>

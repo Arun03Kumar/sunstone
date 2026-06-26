@@ -1,0 +1,14 @@
+.heading {
+  color: blue;
+  background-color: lightgray;
+}
+
+.logged-in {
+  color: green;
+  font-weight: bold;
+}
+
+.logged-out {
+  color: red;
+  font-style: italic;
+}

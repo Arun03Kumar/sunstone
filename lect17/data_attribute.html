@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button data-id="btn1">button</button>
+    <button data-id="btn2">button</button>
+    <button data-id="btn3">button</button>
+    <button data-id="btn4" data-abc="abc" data-def="def">button</button>
+
+    <div id="myDiv" data-user-name="Alice">Profile</div>
+
+    <script>
+      //   const btn = document.querySelectorAll("button");
+      //   console.log(btn);
+      //   btn.forEach((btn) => {
+      //     btn.addEventListener("click", () => {
+      //       console.log(btn.textContent);
+      //     });
+      //   });
+
+      //   console.log(btn[0].dataset);
+      //   console.log(btn[3].dataset);
+      //   console.log(btn[3].dataset.id);
+
+      //   btn.forEach((btn) => {
+      //     btn.addEventListener("click", () => {
+      //       console.log(btn.dataset.id);
+      //     });
+      //   });
+
+      const myDiv = document.getElementById("myDiv");
+      console.log(myDiv.dataset);
+      console.log(myDiv.dataset.userName);
+
+      myDiv.dataset.userName = "Bob";
+      console.log(myDiv.dataset.userName);
+
+      myDiv.dataset.newAttribute = "newValue";
+      console.log(myDiv.dataset);
+
+      delete myDiv.dataset.newAttribute;
+      console.log(myDiv.dataset);
+    </script>
+  </body>
+</html>

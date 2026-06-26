@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .class1 {
+        color: red;
+      }
+      .class2 {
+        font-weight: bold;
+      }
+      .class3 {
+        font-style: italic;
+      }
+
+      .active {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="class1 class2 class3">working with classes demo</div>
+
+    <script>
+      const el = document.querySelector(".class1");
+      //   console.log(el.classList);
+      //   console.log(el.classList[0]);
+      //   console.log(el.classList[1]);
+      //   console.log(el.classList[2]);
+      //   el.classList.add("active");
+      //   el.classList.remove("active");
+
+      //   el.addEventListener("click", () => {
+      //     el.classList.toggle("active");
+      //   });
+
+      let x = el.classList.contains("class1");
+      console.log(x);
+    </script>
+  </body>
+</html>

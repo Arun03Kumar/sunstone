@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="www.google.com" method="get">
+      <input type="text" placeholder="username" min="2" max="5" required />
+      <input type="password" placeholder="password" required maxlength="6" />
+      <input type="email" placeholder="email" required />
+
+      <input type="submit" />
+    </form> -->
+    <!-- <form id="form">
+      <input id="name" />
+      <button onclick="validate()">submit</button>
+    </form>
+    <div id="error"></div> -->
+
+    <select id="country">
+      <option value="">Select Country</option>
+      <option value="us">United States</option>
+      <option value="in">India</option>
+    </select>
+
+    <script>
+      //   const form = document.getElementById("form");
+      //   form.addEventListener("submit", (e) => {
+      //     e.preventDefault();
+      //     const name = document.getElementById("name");
+      //     console.log(name.value);
+      //     if (name.value === "") {
+      //       alert("name is required");
+      //     } else if (name.value.length < 2 || name.value.length > 5) {
+      //       alert("name must be between 2 and 5 characters");
+      //     } else {
+      //       alert("form submitted");
+      //     }
+      //   });
+
+      function validate() {
+        // const name = document.getElementById("name");
+        // console.log(name.value);
+        // if (name.value.trim() === "") {
+        //   alert("name is required");
+        // } else if (name.value.length < 2 || name.value.length > 5) {
+        //   alert("name must be between 2 and 5 characters");
+        // } else {
+        //   alert("form submitted");
+        // }
+      }
+
+      //   const name = document.getElementById("name");
+      //   const error = document.getElementById("error");
+      //   //   error.textContent = "asjdh";
+      //   name.addEventListener("input", () => {
+      //     const val = name.value;
+      //     console.log(val);
+      //     if (val.length < 2) {
+      //       error.textContent = "less than 2";
+      //     } else if (val.length > 5) {
+      //       error.textContent = "greater than 5";
+      //     } else {
+      //       error.textContent = "";
+      //     }
+      //   });
+
+      const country = document.getElementById("country");
+      country.addEventListener("change", () => {
+        console.log(country.value);
+      });
+      if (country.value === "") {
+        alert("Please select a country");
+      }
+    </script>
+  </body>
+</html>

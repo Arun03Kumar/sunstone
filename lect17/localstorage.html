@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Product 1 <button data-product="1">Add to Cart</button></li>
+      <li>Product 2 <button data-product="2">Add to Cart</button></li>
+      <li>Product 3 <button data-product="3">Add to Cart</button></li>
+    </ul>
+
+    <div id="cart"></div>
+    <button id="theme">dark</button>
+
+    <script>
+      //   let added_product = [];
+
+      //   const btn = document.querySelectorAll("button");
+      //   const cart = document.getElementById("cart");
+      //   console.log(btn);
+      //   btn.forEach((btn) => {
+      //     btn.addEventListener("click", () => {
+      //       const product_id = btn.dataset.product;
+      //       console.log(product_id);
+      //       added_product.push(product_id);
+
+      //       cart.textContent += `Product ${product_id} `;
+      //     });
+      //   });
+
+      //   localStorage.setItem("cart", "product 1");
+      //   localStorage.setItem("cart2", "product 2 ");
+      //   localStorage.setItem("cart", ["product1", "product2"]);
+
+      //   console.log(localStorage.getItem("cart"));
+      //   localStorage.removeItem("cart");
+
+      //   localStorage.clear();
+
+      //   localStorage.setItem("cart", JSON.stringify(["product1", "product2"]));
+
+      //   const obj = {
+      //     name: "Alice",
+      //     age: 20,
+      //   };
+
+      //   localStorage.setItem("user", JSON.stringify(obj));
+
+      //   console.log(typeof localStorage.getItem("cart"));
+
+      //   console.log(typeof JSON.parse(localStorage.getItem("cart")));
+
+      //   const product_list = JSON.parse(localStorage.getItem("cart"));
+      //   console.log(product_list);
+
+      const theme_btn = document.getElementById("theme");
+
+      const saved_theme = localStorage.getItem("theme");
+      if (saved_theme === "dark") {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        theme_btn.textContent = " light";
+      } else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        theme_btn.textContent = "dark";
+      }
+
+      theme_btn.addEventListener("click", () => {
+        if (theme_btn.textContent === "dark") {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+          theme_btn.textContent = "light";
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+          theme_btn.textContent = "dark";
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+  </body>
+</html>
